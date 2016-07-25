@@ -39,8 +39,8 @@
             <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title:" value="${blog.title}"/>
         </div>
         <div class="form-group">
-            <label for="userByUserId.id">Author:</label>
-            <select class="form-control" id="userByUserId.id" name="userByUserId.id">
+            <label for="studentByUserId.id">Author:</label>
+            <select class="form-control" id="studentByUserId.id" name="studentByUserId.id">
                 <c:forEach items="${userList}" var="user">
                     <c:if test="${user.id==blog.studentByUserId.id}">
                         <option value="${user.id}" selected="selected">${user.nickname}, ${user.username}</option>
@@ -56,11 +56,11 @@
             <textarea class="form-control" id="content" name="content" rows="3"
                       placeholder="Please Input Content">${blog.content}</textarea>
         </div>
-        <div class="form-group">
-            <label for="pubDate">Publish Date:</label>
-            <input type="date" class="form-control" id="pubDate" name="pubDate"
-                   value="<fmt:formatDate value="${blog.pubDate }" pattern="yyyy-MM-dd"/>"/>
-        </div>
+        <%--<div class="form-group">--%>
+            <%--<label for="pubDate">Publish Date:</label>--%>
+            <%--<input type="date" class="form-control" id="pubDate" name="pubDate"--%>
+                   <%--value="<fmt:formatDate value="${blog.pubDate }" pattern="yyyy-MM-dd"/>"/>--%>
+        <%--</div>--%>
         <!-- 把 id 一并写入 blogP 中 -->
         <input type="hidden" id="id" name="id" value="${blog.id}"/>
         <div class="form-group">

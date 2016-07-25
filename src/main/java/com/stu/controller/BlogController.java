@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,8 +43,8 @@ public class BlogController {
     }
 
     @RequestMapping(value = "/admin/blogs/addP",method = RequestMethod.POST)
-    public String addBlogPost(@ModelAttribute("blog")BlogBean blogEntity){
-
+    public String addBlogPost(@ModelAttribute("blogBean")BlogBean blogEntity){
+        blogEntity.setPubDate(new Date());
 //        blogRepository.save(blogEntity);
         System.out.print(blogEntity.toString());
         blogRepository.saveAndFlush(blogEntity);
@@ -75,9 +76,10 @@ public class BlogController {
     }
 
     @RequestMapping(value = "admin/blogs/updateP",method = RequestMethod.POST)
-    public String updateBlogP(@ModelAttribute("blogP")BlogBean blogBean,ModelMap modelMap){
+    public String updateBlogP(@ModelAttribute("blogP")BlogBean blogBean){
+        blogBean.setPubDate(new Date());
         System.out.println(blogBean.toString());
-        blogRepository.update(blogBean.getTitle(),blogBean.getContent(),blogBean.getId(),blogBean.getPubDate(),blogBean.getId());
+        blogRepository.update(blogBean.getTitle(),blogBean.getContent(),blogBean.getStudentByUserId().getId(),blogBean.getPubDate(),blogBean.getId());
         blogRepository.flush();
         return "redirect:/admin/blogs";
     }

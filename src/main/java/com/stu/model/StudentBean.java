@@ -1,9 +1,12 @@
 package com.stu.model;
 
+import org.springframework.context.annotation.Lazy;
+
 import javax.persistence.*;
 import java.util.Collection;
 
 /**
+ *
  * Created by laizuhong on 2016/7/19.
  */
 @Entity

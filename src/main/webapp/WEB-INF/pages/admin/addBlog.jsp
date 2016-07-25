@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -31,7 +32,7 @@
 <body>
     <div class="container">
         <h1>添加博客</h1>
-        <form:form action="/admin/blogs/addP" method="post" commandName="blog" role="form">
+        <form:form action="/admin/blogs/addP" method="post" commandName="blogBean" role="form">
             <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title:"/>
@@ -48,10 +49,10 @@
                 <label for="content">Content:</label>
                 <textarea class="form-control" id="content" name="content" rows="3" maxlength="200" minlength="6" placeholder="Please Input Content"></textarea>
             </div>
-            <div class="form-group">
-                <label for="pubDate">Publish Date:</label>
-                <input type="date" class="form-control" id="pubDate" name="pubDate"/>
-            </div>
+            <%--<div class="form-group">--%>
+                <%--<label for="pubDate">Publish Date:</label>--%>
+                <%--<input type="date" id="pubDate" name="pubDate" class="form-control">--%>
+            <%--</div>--%>
             <div class="form-group">
                 <button type="submit" class="btn btn-sm btn-success">提交</button>
             </div>

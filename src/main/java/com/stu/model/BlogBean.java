@@ -1,12 +1,10 @@
 package com.stu.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.Date;
 
 /**
+ *
  * Created by laizuhong on 2016/7/19.
  */
 @Entity

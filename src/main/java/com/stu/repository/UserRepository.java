@@ -16,15 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface UserRepository extends JpaRepository<StudentBean,Integer>{
 
-//    @Query("insert into  ")
-//    void save(@Param("nickname") String nickname, @Param("username") String username,
-//                     @Param("password") String password);
-
     @Modifying
     @Transactional
     @Query("update StudentBean us set us.nickname=:nickname,us.username=:username,us.password=:password where us.id=:id")
     void updateUser(@Param("nickname") String nickname, @Param("username") String username,
                            @Param("password") String password, @Param("id") Integer id);
-
 
 }

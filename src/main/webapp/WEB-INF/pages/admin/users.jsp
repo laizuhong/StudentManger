@@ -48,6 +48,7 @@
                     <td>昵称</td>
                     <td>姓名</td>
                     <td>密码</td>
+                    <td>博客数</td>
                     <td>操作</td>
                 </tr>
                 <c:forEach items="${userlist}" var="user">
@@ -55,6 +56,7 @@
                         <td>${user.id}</td>
                         <td>${user.nickname}</td>
                         <td>${user.username}</td>
+                        <td>${user.blogsById.size()}</td>
                         <td>${user.password}</td>
                         <td>
                             <a href="/admin/users/show/${user.id}" type="button" class="btn btn-sm btn-success">详情</a>
